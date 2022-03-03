@@ -20,12 +20,15 @@ data analysis by the Sparkify analysts.
 
  - 2:   Execute the "etl.py" to run the ETL process in order to populate you tables and get your data ready!
 
- * Obs.: The notebooks available in this project was used to develop the script and test the code;
+ * Obs.: The notebooks available in this project were used to develop the etl.py script and test the code;
          Make sure you have the "data" folder in the same folder with the scripts, otherwise, you'll need to point
          the path address to somewhere else (no one wants to do changes in the code now, right?).
 
 ## Testing
  You may want to run the cells in "test.ipynb" to evaluate your table structures, queries and the inserted data.
+ 
+## Data files
+ You'll find data files from songs under data/song_data and data files from logs under data/log_data.
 
 
  ### Enjoy!
