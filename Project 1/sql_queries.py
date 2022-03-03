@@ -11,12 +11,12 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 songplay_table_create = ("""
     CREATE TABLE songplays (
         songplay_id serial PRIMARY KEY,
-        start_time bigint not null,
+        start_time timestamp not null,
         user_id int not null,
-        level varchar not null,
-        song_id int,
+        level varchar,
+        song_id varchar,
         artist_id varchar,
-        session_id int not null,
+        session_id int,
         location varchar,
         user_agent varchar
     )
@@ -35,10 +35,10 @@ user_table_create = ("""
 song_table_create = ("""
     CREATE TABLE songs (
         song_id varchar PRIMARY KEY,
-        title varchar,
-        artist_id varchar not null,
+        title varchar not null,
+        artist_id varchar,
         year int,
-        duration float
+        duration float not null
     )
 """)
 
