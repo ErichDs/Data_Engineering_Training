@@ -6,6 +6,16 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    """
+    Get data from the specified song file, split into:
+    song data and artist data and then, upload it
+    to the corresponding database table.
+
+    Parameters:
+    -----------
+    cur: a cursor for interacting with database.
+    filepath: the path where the file is located.
+    """
     # open song file
     df = pd.read_json(filepath, typ = 'series')
 
@@ -19,6 +29,19 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+    """
+    Get data from the specified log file, filter
+    data with 'page = NextSong', and then split into
+    the following datasets:
+    time data (transforming timestamp field), user data
+    and songplay data, uploading each dataset to the
+    corresponding table.
+
+    Parameters
+    -----------
+    cur: a cursor for interacting with database.
+    filepath: the path where the file is located.
+    """
     # open log file
     df = pd.read_json(filepath, lines = True)
 
@@ -61,6 +84,17 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
+    """
+    Find and locate .json data files in the current
+    directory/folder.
+
+    Parameters:
+    -----------
+    cur: a cursor for interacting with database.
+    conn: object responsible for generate a connection with the database.
+    filepath: the path containing the folders/files to be processed.
+    func: the function to be used to process the files.
+    """
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
