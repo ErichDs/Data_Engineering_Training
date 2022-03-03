@@ -5,6 +5,14 @@
 the Music Stream App, Sparkify (not real), and load into generated tables for further
 data analysis by the Sparkify analysts.
 
+## Before run the scripts
+ Make sure you have a postgres instance and python installed into your environment;
+ You'll need the following python libs:
+  - pandas
+  - psycopg2
+  - sql_queries
+  - os and glob;
+
 ## How to use
  - 1:   Execute the "create_tables.py" file first, in order to get your database and tables all settled.
         This script will use the "sql_queries.py", already filled to get the tables structures, insert
